@@ -25,7 +25,9 @@ class CreateMfosTable extends Migration
             $table->integer('stavka');
             $table->integer('approve_percent');
             $table->integer('review_time');
+            $table->string('getting_way')->nullable();
             $table->double('rating')->nullable();
+            $table->double('delay')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
