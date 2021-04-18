@@ -174,7 +174,7 @@ class MfoController extends Controller
         $approve_percent = $request->input('approve_percent');
         $review_time = $request->input('review_time');
         $description = $request->input('description');
-        $background_img = $request->input('background_img');
+        $background_img = $request->file('background_img');
         $phone = $request->input('phone');
         $email = $request->input('email');
         $address = $request->input('address');
