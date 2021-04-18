@@ -283,7 +283,7 @@ class MfoController extends Controller
                 $result['message'] = 'Пожалуйста, загружайте только jpeg,jpg,png';
                 break;
             }
-            $path = $logo->store('public/images/');
+            $path = $logo->store(storage_path('public/images/'));
             $logo_name = $logo->getClientOriginalName();
             $logo_name = sha1(time() . $logo_name) . '.' . $logo->extension();
             $logo->move($path, $logo_name);
@@ -314,7 +314,7 @@ class MfoController extends Controller
                 $result['message'] = 'Пожалуйста, загружайте только jpeg,jpg,png';
                 break;
             }
-            $path = $background_img->store('public/images/');
+            $path = $background_img->store(storage_path('public/images/'));
             $background_img_name = $background_img->getClientOriginalName();
             $background_img_name = sha1(time() . $background_img_name) . '.' . $background_img->extension();
             $background_img->move($path, $background_img_name);
