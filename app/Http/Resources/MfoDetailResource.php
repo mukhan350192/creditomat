@@ -21,6 +21,7 @@ class MfoDetailResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'documents' => $this->documents,
+            'url' => $this->url,
         ];
     }
 }
