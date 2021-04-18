@@ -29,10 +29,10 @@ class MfoController extends Controller
         }
         $sql = "SELECT * FROM mfos WHERE active=1";
         if ($period){
-            $sql = " AND srok_min<=$period AND srok_max>=$period";
+            $sql .= " AND srok_min<=$period AND srok_max>=$period";
         }
         if ($amount){
-            $sql = " AND amount_min<=$amount AND amount_max>=$amount";
+            $sql .= " AND amount_min<=$amount AND amount_max>=$amount";
         }
         $sql .= " LIMIT $skip,$take";
         $data = DB::select($sql);
