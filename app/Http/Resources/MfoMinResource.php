@@ -15,6 +15,7 @@ class MfoMinResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'name' => $this->name,
             'logo' => $this->logo,
             'amount_min' => $this->amount_min,
@@ -22,6 +23,7 @@ class MfoMinResource extends JsonResource
             'srok_min' => $this->srok_min,
             'srok_max' => $this->srok_max,
             'delay' => $this->delay,
+            'stavka' => $this->stavka,
             'approve_percent' => $this->approve_percent,
             'review_time' => $this->review_time,
         ];
