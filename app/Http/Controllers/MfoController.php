@@ -261,6 +261,11 @@ class MfoController extends Controller
                 $result['message'] = 'Не передан просрочка';
                 break;
             }
+            $us = new UserController();
+            if ($this->checkUser($token)){
+                $user_role = $us->getUserRole($token);
+                $user_permissions = $us->getUserPermission($token);
+            }
             if ($user_role !== 1 && $user_permissions !== 3) {
                 $result['message'] = 'У вас нету доступа сделать эту действие';
                 break;
