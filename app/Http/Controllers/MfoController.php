@@ -34,6 +34,12 @@ class MfoController extends Controller
         if ($amount){
             $sql .= " AND amount_min<=$amount AND amount_max>=$amount";
         }
+        if ($sort && $sort=='stavka'){
+            $sql .= " ORDER BY stavka ASC";
+        }
+        if ($sort && $sort == 'approve'){
+            $sql .= " ORDER BY approve_percent DESC";
+        }
         $sql .= " LIMIT $skip,$take";
         $data = DB::select($sql);
         if (isset($data)){
