@@ -439,14 +439,14 @@ class MfoController extends Controller
                 $result['message'] = 'Не передан просрочка';
                 break;
             }
-            if ($user_role !== 1 && $user_permissions !== 3) {
+            /*if ($user_role !== 1 && $user_permissions !== 3) {
                 $result['message'] = 'У вас нету доступа сделать эту действие';
                 break;
             }
             if ($user_role === 3 && !in_array('4', $user_permissions)) {
                 $result['message'] = 'У вас нету доступа сделать эту действие. Пожалуйста обращайтесь администратору!';
                 break;
-            }
+            }*/
             DB::beginTransaction();
             $mfo_id = DB::table('mfos')->where('id',$id)->update([
                 'name' => $name,
