@@ -28,7 +28,7 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/users', [UserController::class, 'index']);
 
 Route::get('/index', [MfoController::class, 'index']);
-Route::post('/add',[MfoController::class,'add']);
-Route::get('/mfo', [MfoController::class,'mfo']);
-Route::put('/edit', [MfoController::class, 'edit']);
-Route::put('/archive', [MfoController::class, 'archive']);
+Route::post('/addMfo',[MfoController::class,'add']);
+Route::put('/mfo', [MfoController::class,'mfo']);
+Route::put('/editMfo', [MfoController::class, 'edit']);
+Route::put('/archiveMfo', [MfoController::class, 'archive']);
