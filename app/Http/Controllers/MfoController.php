@@ -49,13 +49,13 @@ class MfoController extends Controller
     public function archive(Request $request){
         $token = $request->input('token');
         $id = $request->input('id');
-        $user_role = null;
+        /*$user_role = null;
         $user_permissions = null;
         $us = new UserController();
         if  ($this->checkUser($token)){
             $user_role = $us->getUserRole($token);
             $user_permissions = $us->getUserPermission($token);
-        }
+        }*/
         $result['success'] = false;
         do{
             if (!$token){
@@ -66,7 +66,7 @@ class MfoController extends Controller
                 $result['message'] = 'Не передан айди организации';
                 break;
             }
-            if (is_null($user_permissions) && is_null($user_role)){
+           /* if (is_null($user_permissions) && is_null($user_role)){
                 $result['message'] = 'Нету прав';
                 break;
             }
@@ -77,7 +77,7 @@ class MfoController extends Controller
             if ($user_role === 3 && !in_array('4',$user_permissions)){
                 $result['message'] = 'У вас нету доступа сделать эту действие';
                 break;
-            }
+            }*/
             $mfo = DB::table('mfos')->where('id',$id)->first();
             if (!$mfo){
                 $result['message'] = 'По МФО не найден данные';
