@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
@@ -42,19 +43,19 @@ class PermissionsSeeder extends Seeder
         $role3->givePermissionTo('edit banks');
         $role3->givePermissionTo('delete banks');
 
-        $user = (User::class)->create([
+        $user = DB::table('users')->insertGetId([
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
         ]);
         $user->assignRole($role2);
 
-        $user = (User::class)->create([
+        $user = DB::table('users')->insertGetId([
             'name' => 'Super Admin',
             'email' => 'spadmin@mod.com',
         ]);
         $user->assignRole($role1);
 
-        $user = (User::class)->create([
+        $user = DB::table('users')->insertGetId([
             'name' => 'Moderator',
             'email' => 'moderator@moderator.com',
         ]);
