@@ -27,7 +27,7 @@ class MfoController extends Controller
             $skip = ($page-1)*15;
             $take = 15;
         }
-        $sql = "SELECT * FROM mfos";
+        $sql = "SELECT * FROM mfos WHERE active=1";
         if ($period){
             $sql = " AND srok_min<=$period AND srok_max>=$period";
         }
