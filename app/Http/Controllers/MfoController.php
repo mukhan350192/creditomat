@@ -42,6 +42,7 @@ class MfoController extends Controller
         }else{
             $result['success'] = false;
         }
+        return response()->json($result);
 
     }
 
