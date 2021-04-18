@@ -46,18 +46,21 @@ class PermissionsSeeder extends Seeder
         $user = DB::table('users')->insertGetId([
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
+            'password' => '123456',
         ]);
         $user->assignRole($role2);
 
         $user = DB::table('users')->insertGetId([
             'name' => 'Super Admin',
             'email' => 'spadmin@mod.com',
+            'password' => '123456',
         ]);
         $user->assignRole($role1);
 
         $user = DB::table('users')->insertGetId([
             'name' => 'Moderator',
             'email' => 'moderator@moderator.com',
+            'password' => '123456',
         ]);
         $user->assignRole($role3);
     }
