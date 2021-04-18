@@ -32,3 +32,5 @@ Route::post('/addMfo',[MfoController::class,'add']);
 Route::put('/mfo', [MfoController::class,'mfo']);
 Route::put('/editMfo', [MfoController::class, 'edit']);
 Route::put('/archiveMfo', [MfoController::class, 'archive']);
+
+Route::get('/test',[UserController::class,'test']);

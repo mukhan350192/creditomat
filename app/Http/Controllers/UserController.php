@@ -174,4 +174,10 @@ class UserController extends Controller
         }
         return $permissions;
     }
+
+    public function test(Request $request){
+        $token = $request->input('token');
+        $user = User::where('remember_token',$token)->first();
+        var_dump($user);
+    }
 }
