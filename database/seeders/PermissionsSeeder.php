@@ -42,19 +42,19 @@ class PermissionsSeeder extends Seeder
         $role3->givePermissionTo('edit banks');
         $role3->givePermissionTo('delete banks');
 
-        $user = Factory(User::class)->create([
+        $user = (User::class)->create([
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
         ]);
         $user->assignRole($role2);
 
-        $user = Factory(User::class)->create([
+        $user = (User::class)->create([
             'name' => 'Super Admin',
             'email' => 'spadmin@mod.com',
         ]);
         $user->assignRole($role1);
 
-        $user = Factory(User::class)->create([
+        $user = (User::class)->create([
             'name' => 'Moderator',
             'email' => 'moderator@moderator.com',
         ]);
