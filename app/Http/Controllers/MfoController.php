@@ -34,7 +34,7 @@ class MfoController extends Controller
         if ($amount){
             $sql = " AND amount_min<=$amount AND amount_max>=$amount";
         }
-        $sql .= " AND LIMIT $skip,$take";
+        $sql .= " LIMIT $skip,$take";
         $data = DB::select($sql);
         if (isset($data)){
             $result['success'] = true;
