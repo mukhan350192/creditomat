@@ -178,8 +178,6 @@ class UserController extends Controller
     public function test(Request $request){
         $token = $request->input('token');
         $user = User::where('remember_token',$token)->first();
-        var_dump($user);
-        var_dump($user->roles);
-        var_dump($user->getAllPermissions());
+        print_r($user->roles);
     }
 }
