@@ -43,24 +43,21 @@ class PermissionsSeeder extends Seeder
         $role3->givePermissionTo('edit banks');
         $role3->givePermissionTo('delete banks');
 
-        $user = DB::table('users')->insertGetId([
+        $user = factory(User::class)->create([
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
-            'password' => '123456',
         ]);
         $user->assignRole($role2);
 
-        $user = DB::table('users')->insertGetId([
+        $user = factory(User::class)->create([
             'name' => 'Super Admin',
             'email' => 'spadmin@mod.com',
-            'password' => '123456',
         ]);
         $user->assignRole($role1);
 
-        $user = DB::table('users')->insertGetId([
+        $user = factory(User::class)->create([
             'name' => 'Moderator',
             'email' => 'moderator@moderator.com',
-            'password' => '123456',
         ]);
         $user->assignRole($role3);
     }

@@ -261,7 +261,7 @@ class MfoController extends Controller
                 $result['message'] = 'Не передан просрочка';
                 break;
             }
-            $us = new UserController();
+           /* $us = new UserController();
             if ($this->checkUser($token)){
                 $user_role = $us->getUserRole($token);
                 $user_permissions = $us->getUserPermission($token);
@@ -273,7 +273,7 @@ class MfoController extends Controller
             if ($user_role === 3 && !in_array('4', $user_permissions)) {
                 $result['message'] = 'У вас нету доступа сделать эту действие. Пожалуйста обращайтесь администратору!';
                 break;
-            }
+            }*/
             DB::beginTransaction();
             $allowedfileExtension = ['jpeg', 'jpg', 'png'];
             $extension = $logo->getClientOriginalExtension();
