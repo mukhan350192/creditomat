@@ -160,7 +160,7 @@ class UserController extends Controller
 
     public function getUserRole($token)
     {
-        $user = User::where('remember_token', $token)->first();
+        $user = User::where('remember_token', $token)->getg();
         return $user->roles[0]->id;
     }
 
