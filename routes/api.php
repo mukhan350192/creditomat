@@ -35,3 +35,5 @@ Route::put('/archiveMfo', [MfoController::class, 'archive']);
 
 Route::get('/saveData',[MfoController::class,'saveData']);
 Route::get('/mfoClick',[MfoController::class,'mfoClick']);
+
+Route::get('/getClickID',[MfoController::class,'getClickID']);
