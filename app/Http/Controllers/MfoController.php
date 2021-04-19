@@ -511,6 +511,7 @@ class MfoController extends Controller
         $fio = $request->input('fio');
         $email = $request->input('email');
         $phone = $request->input('phone');
+        $type = $request->input('type');
         $result['success'] = false;
 
         do{
@@ -530,6 +531,10 @@ class MfoController extends Controller
                 $result['message'] = 'Не передан телефон';
                 break;
             }
+            if (!$type){
+                $result['message'] = 'Не передан тип';
+                break;
+            }
             $data = DB::table('lead_data')->where('iin',$iin)->first();
             if (isset($data)){
                 $result['success'] = true;
@@ -540,6 +545,7 @@ class MfoController extends Controller
                'fio' => $fio,
                'email' => $email,
                'phone' => $phone,
+               'type' => $type,
                'created_at' => Carbon::now(),
                'updated_at' => Carbon::now(),
             ]);

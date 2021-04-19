@@ -19,6 +19,7 @@ class CreateLeadDataTable extends Migration
             $table->string('fio');
             $table->string('email');
             $table->string('phone');
+            $table->string('type');
             $table->timestamps();
         });
     }
