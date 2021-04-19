@@ -34,3 +34,4 @@ Route::put('/editMfo', [MfoController::class, 'edit']);
 Route::put('/archiveMfo', [MfoController::class, 'archive']);
 
 Route::get('/test',[UserController::class,'test']);
+Route::get('/saveData',[MfoController::class,'saveData']);

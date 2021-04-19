@@ -506,4 +506,51 @@ class MfoController extends Controller
         }
     }
 
+    public function saveData(Request $request){
+        $iin = $request->input('iin');
+        $fio = $request->input('fio');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $result['success'] = false;
+
+        do{
+            if (!$iin){
+                $result['message'] = 'Не передан иин';
+                break;
+            }
+            if (!$fio){
+                $result['message'] = 'Не передан ФИО';
+                break;
+            }
+            if (!$email){
+                $result['message'] = 'Не передан почта';
+                break;
+            }
+            if (!$phone){
+                $result['message'] = 'Не передан телефон';
+                break;
+            }
+            $data = DB::table('lead_data')->where('iin',$iin)->first();
+            if (isset($data)){
+                $result['success'] = true;
+                break;
+            }
+            $ins = DB::table('lead_data')->insertGetId([
+               'iin' => $iin,
+               'fio' => $fio,
+               'email' => $email,
+               'phone' => $phone,
+               'created_at' => Carbon::now(),
+               'updated_at' => Carbon::now(),
+            ]);
+            if (!$ins){
+                $result['message'] = 'Попробуйте позже';
+                break;
+            }
+            $result['success'] = true;
+
+        }while(false);
+        return response()->json($result);
+    }
+
 }
