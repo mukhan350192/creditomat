@@ -600,7 +600,7 @@ class MfoController extends Controller
 
     public function getClickID(){
         $result['success'] = true;
-        $result['click_id'] = sha1(time(),40);
+        $result['click_id'] = sha1(time(),true);
         return response()->json($result);
     }
 
