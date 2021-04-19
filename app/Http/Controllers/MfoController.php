@@ -603,7 +603,7 @@ class MfoController extends Controller
         $time = time();
         $click = sha1($time);
         $result['click_id'] = $click;
-        return response()->json($result);
+        return response()->json($result,JSON_UNESCAPED_UNICODE);
     }
 
 }
