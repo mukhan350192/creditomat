@@ -45,7 +45,7 @@ class MfoController extends Controller
         $data = DB::select($sql);
         if (isset($data)) {
             $result['success'] = true;
-            $result['data'] = MfoMinResource::collection($data);
+            $result['data'] = MfoResource::collection($data);
         } else {
             $result['success'] = false;
         }
